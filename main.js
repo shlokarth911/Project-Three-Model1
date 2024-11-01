@@ -116,3 +116,12 @@ window.addEventListener("resize", () => {
   renderer.setSize(window.innerWidth, window.innerHeight);
   composer.setSize(window.innerWidth, window.innerHeight);
 });
+
+box1.addEventListener("click", () => {
+  window.location.href = "https://shlokarth911.github.io/portfolio/";
+});
+const box2 = document.querySelector(".box2");
+
+box2.addEventListener("click", () => {
+  window.location.href = "https://shlokarth911.github.io/Project-Three-Model2/";
+});
