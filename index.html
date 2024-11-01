@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <title>Project Three [2]</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/lenis@1.1.14/dist/lenis.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav>
+      <a href="/" class="text-lg font-light">Home</a>
+      <a href="/games" class="text-lg font-light">Games</a>
+      <a href="/about" class="text-lg font-light">About</a>
+      <a href="/contact" class="text-lg font-light">Contact</a>
+    </nav>
+    <section class="main w-full">
+      <div class="w-full h-full overflow-hidden">
+        <img
+          src="./public/3d-rendered-the-cyberpunk-logo-using-blender-v0-khopj82wqee91.png"
+          alt=""
+          class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mix-blend-screen w-2/3 filter saturate-150 contrast-125"
+        />
+        <canvas id="canvas"></canvas>
+      </div>
+    </section>
+
+    <section class="about">
+      <div class="about-part1">
+        <h1>Built in <span>ThreeJS</span></h1>
+        <p>
+          Three.js is a popular JavaScript library that makes it easy to create
+          3D graphics in the browser using WebGL. It provides a straightforward
+          API to build and animate complex 3D scenes, making it accessible even
+          for those new to 3D development. With Three.js, developers can add
+          objects, textures, lights, and shadows, allowing for immersive visuals
+          and interactive experiences. Its versatility supports applications in
+          gaming, data visualization, virtual reality, and interactive websites,
+          enhancing user engagement and visual appeal.
+        </p>
+      </div>
+      <div class="about-part2">
+        <a href="https://shlokarth911.github.io/portfolio/"> Coded by me </a>
+      </div>
+    </section>
+
+    <footer>
+      <div class="box1 box">
+        <i class="ri-arrow-left-line"></i>
+        <h1>Go Back</h1>
+      </div>
+      <div class="box2 box">
+        <h1>Next</h1>
+        <i class="ri-arrow-right-line"></i>
+      </div>
+    </footer>
+  </body>
+  <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
+
+  <script type="module" src="./main.js"></script>
+</html>
