@@ -117,18 +117,60 @@ window.addEventListener("resize", () => {
   composer.setSize(window.innerWidth, window.innerHeight);
 });
 
-const box1 = document.querySelector(".box1");
-const box2 = document.querySelector(".box2");
+//animation using gsap
+const navBtn = document.querySelector(".nav-btn");
+let flag = true;
+navBtn.addEventListener("click", () => {
+  if (flag == false) {
+    flag = true;
+    navBtn.textContent = "OPEN";
+    let tl = gsap.timeline();
 
-if (box1) {
-  box1.addEventListener("click", () => {
-    window.location.href = "https://shlokarth911.github.io/portfolio/";
-  });
-}
+    tl.to(".nav-main a ", {
+      fontSize: 0,
+      duration: 0.1,
+    });
 
-if (box2) {
-  box2.addEventListener("click", () => {
-    window.location.href =
-      "https://shlokarth911.github.io/Project-Three-Model2/";
-  });
-}
+    tl.to(".nav-main", {
+      height: "2vw",
+      width: "2vw",
+      padding: "0vw",
+      duration: 0.5,
+      ease: "power1.out",
+    });
+
+    tl.to(".nav-main", {
+      height: "0vw",
+      width: "0vw",
+      padding: "0vw",
+      transform: "translate(0vw, -10vw)",
+      duration: 0.5,
+      ease: "power1.out",
+    });
+  } else if (flag == true) {
+    flag = false;
+    let tl = gsap.timeline();
+    navBtn.textContent = "CLOSE";
+
+    tl.to(".nav-main", {
+      height: "2vw",
+      width: "2vw",
+      padding: "0vw",
+      transform: "translate(0vw, 0vw)",
+      duration: 0.5,
+      ease: "power1.out",
+    });
+
+    tl.to(".nav-main", {
+      height: "auto",
+      width: "auto",
+      padding: "1vw 3vw",
+      duration: 0.5,
+    });
+
+    tl.to(".nav-main a ", {
+      fontSize: "1.5vw",
+      duration: 0.1,
+    });
+  }
+});

@@ -23,31 +23,40 @@ body {
 
 nav {
   position: fixed;
-  width: 100%;
   top: 0;
-  left: 0;
-  padding: 1.5vw 0;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 7vw;
-  backdrop-filter: blur(10px);
-  z-index: 99;
+  flex-direction: column;
+  padding: 1vw 0;
 }
 
-nav a {
-  text-decoration: none;
+nav button {
   font-size: 1.5vw;
   font-weight: 600;
-  text-transform: uppercase;
-  transition: 0.4s;
-  letter-spacing: 2px;
-  text-shadow: 0 0 10px #fff;
+  mix-blend-mode: difference;
 }
 
-nav a:hover {
-  scale: 110%;
-  color: rgb(113, 186, 255);
+.nav-main {
+  margin-top: 2vw;
+  display: flex;
+  gap: 7vw;
+  align-items: center;
+  border: 1px solid #fff;
+  border-radius: 50vh;
+  overflow: hidden;
+  flex-wrap: nowrap;
+  box-shadow: 0 0 20px #fff;
+  backdrop-filter: blur(50px);
+  z-index: top;
+  transform: translate(0vw, -10vw);
+}
+
+.nav-main a {
+  font-size: 0;
+  font-weight: 400;
+  transition: all 0.3s;
 }
 
 .about {
