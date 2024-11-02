@@ -117,6 +117,9 @@ window.addEventListener("resize", () => {
   composer.setSize(window.innerWidth, window.innerHeight);
 });
 
+const box1 = document.querySelector(".box1");
+const box2 = document.querySelector(".box2");
+
 box1.addEventListener("click", () => {
   window.location.href = "https://shlokarth911.github.io/portfolio/";
 });
