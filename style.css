@@ -59,6 +59,10 @@ nav button {
   transition: all 0.3s;
 }
 
+.main img {
+  pointer-events: none;
+}
+
 .about {
   height: 100vh;
   width: 100%;
@@ -85,7 +89,7 @@ nav button {
 
 .about-part2 {
   text-align: right;
-  padding: 10vw 8vw;
+  padding: 3vw 8vw;
 }
 
 .about-part2 a {
@@ -100,7 +104,7 @@ nav button {
 }
 
 footer {
-  margin: 3vw 0;
+  margin-bottom: 3vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -141,4 +145,43 @@ footer {
 
 .box:hover h1 {
   font-size: 1.5vw;
+}
+
+@media (max-width: 768px) {
+  .main img {
+    width: 110%;
+  }
+
+  nav button {
+    font-size: 20px;
+  }
+  .about-part1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    height: auto;
+  }
+
+  .about-part1 h1 {
+    font-size: 50px;
+  }
+
+  .about-part1 p {
+    width: 95%;
+    font-size: 15px;
+  }
+
+  .about-part2 {
+    text-align: center;
+  }
+
+  .about-part2 a {
+    font-size: 18px;
+  }
+  .box {
+    width: 80px;
+    height: 80px;
+  }
 }

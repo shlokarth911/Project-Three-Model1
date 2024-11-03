@@ -4,6 +4,7 @@ import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer
 import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass"; //import RenderPass
 import { UnrealBloomPass } from "three/examples/jsm/postprocessing/UnrealBloomPass"; //import UnrealBloomPass
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader"; //import GLTFLoader
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"; //import OrbitControls
 
 // Initialize Lenis
 const lenis = new Lenis();
@@ -50,8 +51,15 @@ bloomPass.radius = 0.5;
 composer.addPass(bloomPass);
 
 //controls
-// const controls = new OrbitControls(camera, renderer.domElement);
-// controls.enableDamping = true;
+let controls;
+if (
+  /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+    navigator.userAgent
+  )
+) {
+  controls = new OrbitControls(camera, renderer.domElement);
+  controls.enableDamping = true;
+}
 
 let model;
 let targetRotationX = 0;
@@ -97,6 +105,10 @@ function animate() {
     currentRotationY += (targetRotationY - currentRotationY) * rotationSpeed;
     model.rotation.x = currentRotationX;
     model.rotation.y = currentRotationY;
+  }
+
+  if (controls) {
+    controls.update();
   }
 
   composer.render();
